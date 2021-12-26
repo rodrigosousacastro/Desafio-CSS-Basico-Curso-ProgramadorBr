@@ -1,0 +1,106 @@
+Assets (ativos que você irá utilizar na sua atividade).
+
+-----------------------------------------------------------
+
+O atributo rel="" vem de relationship serve para você dizer 
+qual o relacionamento do arquivo que você quer utilizar 
+com o arquivo atual. Quando você coloca rel="stylesheet"
+, você está dizendo que o arquivo importado é o arquivo 
+responsável pelo estilo da sua página, e os arquivos que 
+serão utilizados na folha de estilo estão declarados por 
+meio de href="".
+
+Por exemplo:
+
+    <link rel="stylesheet" href="./CSS/style.css">
+
+-----------------------------------------------------------
+
+Quando a imagem encontra-se no mesmo nível do arquivo css, 
+usamos no dentro do atributo url() um ponto e barra 
+url("./Assets/backgorund.png"), porém, quando temos a imagem 
+em nível diferente do arquivo css, utilizamos dois pontos e 
+barra, url("../Assets/backgorund.png"), ficando:
+
+	.card{
+	    background: url("../Assets/backgorund.png");
+	}
+
+Se precisar ser um nível acima, usamos dois pontos barra, 
+dois pontos barra, e assim consecutivamente:
+
+	.card{
+	    background: url("../../Assets/backgorund.png");
+	}
+
+-----------------------------------------------------------
+
+Definimos as dimensões do nosso card, e através da propriedade
+background-size definimos que a imagem irá cobrir todas as 
+dimensões colocadas:
+
+	.card{
+	    background: url("../Assets/backgorund.png") no-repeat;
+	    width: 400px;
+	    height: 200px;
+	    background-size: cover;
+	}
+
+-----------------------------------------------------------
+
+Com (margin: auto;) nós centralizamos o card e com o (margin-top 10%;)
+nós ajustamos a localização vertical do card: 
+
+.card{
+    background: url("../Assets/backgorund.png") no-repeat;
+    width: 400px;
+    height: 200px;
+    padding: 1px 20px;
+    background-size: cover;
+    margin: auto;
+    margin-top: 10%;
+}
+
+-----------------------------------------------------------
+
+O (box-sizing: border-box;) fixa o tamanho da nossa imagem, 
+idependentimente das dimensões do conteúdo (imagem ou texto):
+
+.card{
+    background: url("../Assets/backgorund.png") no-repeat;
+    width: 400px;
+    height: 200px;
+    box-sizing: border-box;
+    padding: 1px 20px;
+    background-size: cover;
+    margin: auto;
+    margin-top: 10%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+-----------------------------------------------------------
+
+Questão importante:
+
+Quando não utilizamos a tag <a> como filha da tag <li></li>,
+nós queremos que o ícone (imagem) também seja um link clicável:  
+        
+	<ul>
+            <a href="https://www.instagram.com/progbr/?hl=pt">
+                <li class="instagram">/Progbr</li>
+            </a>
+            <a href="https://twitter.com/progrbr">
+                <li class="twitter">/Progbr</li>
+            </a>
+            <a href="https://www.youtube.com/channel/UCrdgeUeCll2QKmqmihIgKBQ">
+                <li class="youtube">/Progbr</li>
+            </a>
+        </ul>
+
+
+
